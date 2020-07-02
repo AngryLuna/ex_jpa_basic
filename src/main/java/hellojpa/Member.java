@@ -9,6 +9,13 @@ public class Member {
     private Long id;
     private String name;
 
+    public Member() {}
+
+    public Member(final Long id, final String name) {
+        this.id = id;
+        this.name = name;
+    }
+
     public Long getId() {
         return this.id;
     }
