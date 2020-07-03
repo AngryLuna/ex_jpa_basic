@@ -11,33 +11,7 @@ public class JpaMain {
     public static void main(final String[] args) {
         entityManagerFactory = Persistence.createEntityManagerFactory("hello");
 
-        System.out.println("-------------------- test1 start --------------------");
-        test1();
-        System.out.println("--------------------- test1 end ---------------------");
-
-        System.out.println();
-
-        System.out.println("-------------------- test2 start --------------------");
-        test2();
-        System.out.println("--------------------- test2 end ---------------------");
-
-        System.out.println();
-
-        System.out.println("-------------------- test3 start --------------------");
-        test3();
-        System.out.println("--------------------- test3 end ---------------------");
-
-        System.out.println();
-
-        System.out.println("-------------------- test4 start --------------------");
-        test4();
-        System.out.println("--------------------- test4 end ---------------------");
-
-        System.out.println();
-
-        System.out.println("-------------------- test5 start --------------------");
-        test5();
-        System.out.println("--------------------- test5 end ---------------------");
+        test6();
 
         entityManagerFactory.close();
     }
@@ -183,6 +157,29 @@ public class JpaMain {
             System.out.println("========== before commit ==========");
             entityTransaction.commit();
             System.out.println("========== after commit ==========");
+        } catch (final Exception e) {
+            e.printStackTrace();
+            entityTransaction.rollback();
+        } finally {
+            entityManager.close();
+        }
+    }
+
+    /**
+     * PK 자동 설정 테스트
+     */
+    private static void test6() {
+        final EntityManager entityManager = entityManagerFactory.createEntityManager();
+        final EntityTransaction entityTransaction = entityManager.getTransaction();
+
+        try {
+            entityTransaction.begin();
+
+            entityManager.persist(new Member(null, "TestAutoName1"));
+            entityManager.persist(new Member(null, "TestAutoName2"));
+            entityManager.persist(new Member(null, "TestAutoName3"));
+
+            entityTransaction.commit();
         } catch (final Exception e) {
             e.printStackTrace();
             entityTransaction.rollback();
