@@ -61,7 +61,7 @@ public class JpaMain {
             final Member deleteMember = entityManager.find(Member.class, 2L);
 
             // update
-            updateMember.setName("updatedName1");
+            updateMember.setUsername("updatedName1");
 
             // delete
             entityManager.remove(deleteMember);
@@ -144,15 +144,15 @@ public class JpaMain {
 
             // 1차 캐시에서 조회하기 때문에 select 쿼리문 실행하지 않는다
             final Member findMember1 = entityManager.find(Member.class, 300L);
-            System.out.println(String.format("[%d] %s", findMember1.getId(), findMember1.getName()));
+            System.out.println(String.format("[%d] %s", findMember1.getId(), findMember1.getUsername()));
 
             // 1차 캐시에 없기 때문에 select 쿼리문 실행
             final Member findMember2 = entityManager.find(Member.class, 100L);
-            System.out.println(String.format("[%d] %s", findMember2.getId(), findMember2.getName()));
+            System.out.println(String.format("[%d] %s", findMember2.getId(), findMember2.getUsername()));
 
             // 위 코드에 의해 검색 후 1차 캐시에 저장 되었기 때문에 select 쿼리문 실행하지 않는다
             final Member findMember3 = entityManager.find(Member.class, 100L);
-            System.out.println(String.format("[%d] %s", findMember3.getId(), findMember3.getName()));
+            System.out.println(String.format("[%d] %s", findMember3.getId(), findMember3.getUsername()));
 
             // 1차 캐시에 저장된 동일한 객체 (영속 엔티티 동일성 보장)
             System.out.println(findMember2 == findMember3);
