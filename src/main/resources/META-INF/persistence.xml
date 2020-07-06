@@ -18,7 +18,7 @@
 
             <!-- 스키마 자동 생성 -->
             <!--테이블이 존재하면 drop 후 생성-->
-            <!--<property name="hibernate.hbm2ddl.auto" value="create"/>-->
+            <property name="hibernate.hbm2ddl.auto" value="create"/>
             <!--종료 시점에 테이블 drop-->
             <!--<property name="hibernate.hbm2ddl.auto" value="create-drop"/>-->
             <!--테이블 drop 없이 변경분만 반영 (필드 삭제시 컬럼 삭제는 반영 안됨)-->
