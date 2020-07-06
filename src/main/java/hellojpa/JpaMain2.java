@@ -32,16 +32,22 @@ public class JpaMain2 {
             final TeamMember findMember = entityManager.find(TeamMember.class, member.getId());
             final Team findTeam = findMember.getTeam();
 
+            System.out.println("---------- Team ----------");
             System.out.println(String.format("[%d] %s", findTeam.getId(), findTeam.getName()));
+            System.out.println("--------------------------");
+
+            System.out.println("---------- Members ----------");
+            for (final TeamMember teamMember : findTeam.getMembers()) {
+                System.out.println(String.format("[%d] %s", teamMember.getId(), teamMember.getUserName()));
+            }
+            System.out.println("-----------------------------");
 
             entityTransaction.commit();
-            System.out.println("커밋");
         } catch (final Exception e) {
             e.printStackTrace();
             entityTransaction.rollback();
         } finally {
             entityManager.close();
-            System.out.println("클로즈");
         }
 
         entityManagerFactory.close();
