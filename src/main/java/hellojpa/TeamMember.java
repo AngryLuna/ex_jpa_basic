@@ -41,5 +41,6 @@ public class TeamMember {
 
     public void setTeam(final Team team) {
         this.team = team;
+        this.team.getMembers().add(this);
     }
 }

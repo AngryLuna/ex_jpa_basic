@@ -26,9 +26,6 @@ public class JpaMain2 {
 
             entityManager.persist(member);
 
-            entityManager.flush();
-            entityManager.clear();
-
             final TeamMember findMember = entityManager.find(TeamMember.class, member.getId());
             final Team findTeam = findMember.getTeam();
 
