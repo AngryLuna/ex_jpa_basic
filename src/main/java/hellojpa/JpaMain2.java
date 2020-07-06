@@ -16,25 +16,34 @@ public class JpaMain2 {
             entityTransaction.begin();
 
             final Team team = new Team();
-            team.setName("TestTeam1");
+            team.setName("TestTeam");
 
             entityManager.persist(team);
 
             final TeamMember member = new TeamMember();
-            member.setUserName("TestTeamMember1");
-            member.setTeamId(team.getId());
+            member.setUserName("TestTeamMember");
+            member.setTeam(team);
 
             entityManager.persist(member);
 
+            entityManager.flush();
+            entityManager.clear();
+
             final TeamMember findMember = entityManager.find(TeamMember.class, member.getId());
-            final Team findTeam = entityManager.find(Team.class, findMember.getTeamId());
+            final Team findTeam = findMember.getTeam();
+
+            System.out.println(String.format("[%d] %s", findTeam.getId(), findTeam.getName()));
 
             entityTransaction.commit();
+            System.out.println("커밋");
         } catch (final Exception e) {
             e.printStackTrace();
             entityTransaction.rollback();
         } finally {
             entityManager.close();
+            System.out.println("클로즈");
         }
+
+        entityManagerFactory.close();
     }
 }
