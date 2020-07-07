@@ -10,7 +10,7 @@ import java.util.List;
 @Entity
 @Getter
 @Setter
-@Table(name = "team_mto")
+@Table(name = "many_to_one_team")
 public class Team {
     @Id
     @GeneratedValue

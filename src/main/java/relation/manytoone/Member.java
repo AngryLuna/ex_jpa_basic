@@ -8,7 +8,7 @@ import javax.persistence.*;
 @Entity
 @Getter
 @Setter
-@Table(name = "member_mto")
+@Table(name = "many_to_one_member")
 public class Member {
     @Id
     @GeneratedValue
