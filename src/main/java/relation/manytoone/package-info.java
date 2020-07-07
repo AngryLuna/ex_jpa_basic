@@ -1,5 +1,5 @@
 package relation.manytoone;
 
 /**
- * 일대다 연관관계
+ * 다대일 연관관계
  */

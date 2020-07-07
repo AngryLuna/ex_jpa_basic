@@ -1,4 +1,4 @@
-package relation.manytoone;
+package relation.onetomany;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -8,7 +8,7 @@ import javax.persistence.*;
 @Entity
 @Getter
 @Setter
-@Table(name = "member_mto")
+@Table(name = "member_otm")
 public class Member {
     @Id
     @GeneratedValue
@@ -18,18 +18,8 @@ public class Member {
     private String userName;
 
     @ManyToOne
-    @JoinColumn(name = "team_id")
+    @JoinColumn(name = "team_id", insertable = false, updatable = false) // 읽기 전용으로 설정해서 양방향 처럼 사용
     private Team team;
-
-    /**
-     * 팀 변경 편의 메서드
-     *
-     * @param team
-     */
-    public void changeTeam(final Team team) {
-        this.team = team;
-        this.team.getMembers().add(this);
-    }
 
     @Override
     public String toString() {
