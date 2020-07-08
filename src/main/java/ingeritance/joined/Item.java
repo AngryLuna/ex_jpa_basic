@@ -1,5 +1,6 @@
 package ingeritance.joined;
 
+import ingeritance.BaseEntity;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -11,7 +12,7 @@ import javax.persistence.*;
 @Table(name = "inheritance_joined_item")
 @Inheritance(strategy = InheritanceType.JOINED)
 @DiscriminatorColumn
-public class Item {
+public class Item extends BaseEntity {
     @Id
     @GeneratedValue
     @Column(name = "item_id")
