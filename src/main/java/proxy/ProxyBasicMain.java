@@ -4,7 +4,7 @@ import javax.persistence.*;
 
 import static org.hibernate.Hibernate.initialize;
 
-public class JpaMain {
+public class ProxyBasicMain {
     public static void main(final String[] args) {
         final EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("hello");
         final EntityManager entityManager = entityManagerFactory.createEntityManager();

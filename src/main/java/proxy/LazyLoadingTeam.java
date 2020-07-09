@@ -10,8 +10,8 @@ import java.util.List;
 @Entity
 @Getter
 @Setter
-@Table(name = "proxy_team")
-public class Team {
+@Table(name = "proxy_lazy_loading_team")
+public class LazyLoadingTeam {
     @Id
     @GeneratedValue
     @Column(name = "team_id")
@@ -20,10 +20,10 @@ public class Team {
     private String name;
 
     @OneToMany(mappedBy = "team")
-    private List<Member> members = new ArrayList<>();
+    private List<LazyLoadingMember> members = new ArrayList<>();
 
     @Override
     public String toString() {
-        return String.format("[%d] %s (%d)", this.id, this.name, this.members.size());
+        return String.format("[%d] %s", this.id, this.name);
     }
 }
