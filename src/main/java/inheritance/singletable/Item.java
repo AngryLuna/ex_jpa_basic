@@ -1,6 +1,6 @@
-package ingeritance.tableperclass;
+package inheritance.singletable;
 
-import ingeritance.BaseEntity;
+import inheritance.BaseEntity;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -9,8 +9,10 @@ import javax.persistence.*;
 @Entity
 @Getter
 @Setter
-@Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
-public abstract class Item extends BaseEntity {
+@Table(name = "inheritance_single_table_item")
+@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
+@DiscriminatorColumn
+public class Item extends BaseEntity {
     @Id
     @GeneratedValue
     @Column(name = "item_id")

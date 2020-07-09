@@ -1,4 +1,4 @@
-package ingeritance.joined;
+package inheritance.tableperclass;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;

@@ -1,15 +1,15 @@
-package ingeritance.singletable;
+package inheritance.tableperclass;
 
 import lombok.Getter;
 import lombok.Setter;
 
-import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
+import javax.persistence.Table;
 
 @Entity
 @Getter
 @Setter
-@DiscriminatorValue("A")
+@Table(name = "inheritance_table_per_class_album")
 public class Album extends Item {
     private String artist;
 

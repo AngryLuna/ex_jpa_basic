@@ -1,4 +1,4 @@
-package ingeritance.singletable;
+package inheritance.singletable;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;

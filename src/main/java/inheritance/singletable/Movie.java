@@ -1,4 +1,4 @@
-package ingeritance.singletable;
+package inheritance.singletable;
 
 import lombok.Getter;
 import lombok.Setter;

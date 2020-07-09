@@ -1,4 +1,4 @@
-package ingeritance;
+package inheritance;
 
 import lombok.Getter;
 import lombok.Setter;
