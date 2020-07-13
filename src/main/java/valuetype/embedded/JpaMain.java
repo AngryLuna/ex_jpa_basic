@@ -28,6 +28,11 @@ public class JpaMain {
             entityManager.persist(member1);
             entityManager.persist(member2);
 
+            final Address oldHomeAddress = member1.getHomeAddress();
+            final Address oldWorkAddress = member1.getWorkAddress();
+            member1.setHomeAddress(new Address("NewHomeCity", oldHomeAddress.getStreet(), oldHomeAddress.getZipCode()));
+            member1.setWorkAddress(new Address("NewWorkCity", oldWorkAddress.getStreet(), oldWorkAddress.getZipCode()));
+
             entityTransaction.commit();
         } catch (final Exception e) {
             e.printStackTrace();
