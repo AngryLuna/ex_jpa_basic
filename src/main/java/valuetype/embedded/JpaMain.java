@@ -34,6 +34,12 @@ public class JpaMain {
             member1.setWorkAddress(new Address("NewWorkCity", oldWorkAddress.getStreet(), oldWorkAddress.getZipCode()));
 
             entityTransaction.commit();
+
+            final Address testAddress = new Address("HomeCity", "HomeStreet", "111-222");
+            System.out.println("===============");
+            System.out.println(String.format("equals1 : %b", oldHomeAddress.equals(testAddress)));
+            System.out.println(String.format("equals2 : %b", oldWorkAddress.equals(testAddress)));
+            System.out.println("===============");
         } catch (final Exception e) {
             e.printStackTrace();
             entityTransaction.rollback();
