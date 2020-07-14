@@ -3,7 +3,7 @@ package hellojpa;
 import javax.persistence.*;
 import java.util.Date;
 
-@Entity
+@Entity(name = "BasicMember")
 //@SequenceGenerator(name = "MEMBER_SEQ_GENERATOR", sequenceName = "MEMBER_SEQ", initialValue = 100, allocationSize = 1)
 @TableGenerator(name = "MEMBER_SEQ_GENERATOR", table = "MY_SEQUENCES", pkColumnValue = "MEMBER_SEQ", allocationSize = 1)
 public class Member {

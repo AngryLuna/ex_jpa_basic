@@ -7,7 +7,7 @@ import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
 import javax.persistence.Table;
 
-@Entity
+@Entity(name = "InheritanceJoinedBook")
 @Getter
 @Setter
 @Table(name = "inheritance_joined_book")

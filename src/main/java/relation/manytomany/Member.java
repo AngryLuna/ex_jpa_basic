@@ -7,7 +7,7 @@ import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
-@Entity
+@Entity(name = "RelationManyToManyMember")
 @Getter
 @Setter
 @Table(name = "many_to_many_member")

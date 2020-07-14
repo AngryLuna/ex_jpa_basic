@@ -7,7 +7,7 @@ import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
-@Entity
+@Entity(name = "RelationOneToManyTeam")
 @Getter
 @Setter
 @Table(name = "one_to_many_team")

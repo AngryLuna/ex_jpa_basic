@@ -7,7 +7,7 @@ import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
 import javax.persistence.Table;
 
-@Entity
+@Entity(name = "InheritanceJoinedMovie")
 @Getter
 @Setter
 @Table(name = "inheritance_joined_movie")

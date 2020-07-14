@@ -6,7 +6,7 @@ import lombok.Setter;
 
 import javax.persistence.*;
 
-@Entity
+@Entity(name = "InheritanceSingleTableItem")
 @Getter
 @Setter
 @Table(name = "inheritance_single_table_item")

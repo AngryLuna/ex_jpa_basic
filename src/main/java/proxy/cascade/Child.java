@@ -5,7 +5,7 @@ import lombok.Setter;
 
 import javax.persistence.*;
 
-@Entity
+@Entity(name = "CascadeChild")
 @Getter
 @Setter
 @Table(name = "cascade_child")

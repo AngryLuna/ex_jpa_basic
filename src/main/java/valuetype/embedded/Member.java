@@ -5,7 +5,7 @@ import lombok.Setter;
 
 import javax.persistence.*;
 
-@Entity
+@Entity(name = "ValueTypeEmbeddedMember")
 @Getter
 @Setter
 @Table(name = "value_type_embedded_member")

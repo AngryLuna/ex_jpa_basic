@@ -5,7 +5,7 @@ import lombok.Setter;
 
 import javax.persistence.*;
 
-@Entity
+@Entity(name = "ProxyMember")
 @Getter
 @Setter
 @Table(name = "proxy_member")

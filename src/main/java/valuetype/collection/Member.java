@@ -9,7 +9,7 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
-@Entity
+@Entity(name = "ValueTypeCollectionMember")
 @Getter
 @Setter
 @Table(name = "value_type_collection_member")

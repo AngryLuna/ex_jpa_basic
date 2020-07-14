@@ -5,7 +5,7 @@ import lombok.Setter;
 
 import javax.persistence.*;
 
-@Entity
+@Entity(name = "RelationOneToOneLocker")
 @Getter
 @Setter
 @Table(name = "one_to_one_locker")
