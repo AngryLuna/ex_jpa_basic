@@ -12,6 +12,7 @@ import java.util.List;
 @Getter
 @Setter
 @NoArgsConstructor
+@NamedQuery(name = "Member.findByUserName", query = "select m from Member m where m.userName = :userName")
 public class Member {
     @Id
     @GeneratedValue
