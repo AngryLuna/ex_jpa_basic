@@ -15,6 +15,7 @@
             <property name="hibernate.show_sql" value="true"/>
             <property name="hibernate.format_sql" value="true"/>
             <property name="hibernate.use_sql_comments" value="true"/>
+            <property name="hibernate.default_batch_fetch_size" value="100"/>
 
             <!-- 스키마 자동 생성 -->
             <!--테이블이 존재하면 drop 후 생성-->
